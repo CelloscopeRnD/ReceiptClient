@@ -4,28 +4,18 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String BARCODE_READER_CLASS_NAME = "co.celloscope.barcodereader.CameraActivity";
-    private static final String BARCODE_READER_PACKAGE_NAME = "co.celloscope.barcodereader";
-    private static final int REQUEST_CODE_READ_BARCODE = 1;
-    private static final String NAME = "NAME";
-    private static final String PIN = "PIN";
-    private static final String DOB = "DOB";
-    private static final String BARCODE_TYPE = "BarcodeType";
-    private static final String BARCODE_CONTENT = "BarcodeContent";
-    private static final String PDF417 = "PDF417";
-    private static final String NID = "NID";
-    private boolean isPDF417RequestSend = false;
+    private static final String RECEIPT_SERVICE_CLASS_NAME = "co.celloscope.printingdemo.MainActivity";
+    private static final String RECEIPT_SERVICE_PACKAGE_NAME = "co.celloscope.printingdemo";
+    private static final String RECEIPT_TYPE = "BarcodeType";
+    private static final String JSON_DATA = "BarcodeContent";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,39 +28,16 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startBarcodeReader(PDF417, NID);
-                isPDF417RequestSend = true;
+                startBarcodeReader("1", "{ \"accountName\": \"MD Arif Gazi\", \"accountNumber\": \"2001158500126\", \"agentName\": \"BADRUL ALOM\", \"balanceAmount\": \"BDT 80,550.00\", \"balanceAmountInWords\": \"EIGHTY THOUSAND FIVE HUNDRED FIFTY ONLY\", \"boothAddress\": \"VAIRAB BAZAR, CHOWDHURYR HAT, SONAGAZI\", \"charge\": \"BDT 7.50\", \"customerAddress\": \"GREEN GADEN BUILDING, FLAT- D4, HOUSE- 12, ROAD- 10, BLOCK- C, MIRPUR, PS- MIRPUR, DHAKA\", \"customerId\": \"CB1158500\", \"customerName\": \"Md. Arif Gazi\", \"depositAmountInWords\": \"THREE THOUSAND ONLY\", \"depositAmount\": \"BDT 3,000.00\", \"dpsAccountType\": \"DPS\", \"linkAccountNumber\": \"2005246987526\", \"maturityAmount\": \"BDT 2,26,047.00\", \"maturityDate\": \"19-JAN-2021\", \"mobileNo\": \"01617877595\", \"principalAmount\": \"BDT 1,00,000.00\", \"printDate\": \"19-JAN-2016 13:13:15 PM\", \"productTenor\": \"5 Years\", \"profitRate\": \"8.85% (Yearly)\", \"receiverAccountName\": \"SUJON PATWARY\", \"termDepositAccountType\": \"TERM DEPOSIT\", \"transactionDate\": \"19-JAN-2016\", \"savingsAccountType\": \"Savings\", \"transactionCode\": \"TR222369\", \"userId\": \"615001001 (NAIM ISLAM)\", \"withdrawAmount\": \"BDT 3,000.00 + 7.5 (Charge)\", \"withdrawsAmountInWords\": \"THREE THOUSAND SEVEN TAKA FIFTY PAISA ONLY\" }");
             }
         });
     }
 
-    private void startBarcodeReader(String barcodeType, String barcodeContent) {
+    private void startBarcodeReader(String receiptType, String jsonData) {
         Intent intent = new Intent();
-        intent.putExtra(BARCODE_TYPE, barcodeType);
-        intent.putExtra(BARCODE_CONTENT, barcodeContent);
-        intent.setComponent(new ComponentName(BARCODE_READER_PACKAGE_NAME, BARCODE_READER_CLASS_NAME));
-        startActivityForResult(intent, REQUEST_CODE_READ_BARCODE);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_CODE_READ_BARCODE) {
-            if (resultCode == RESULT_OK) {
-                String message;
-                if (isPDF417RequestSend) {
-                    message = "Name: " + data.getStringExtra(NAME) + "\nPin: " + data.getStringExtra(PIN) + "\nDOB: " + data.getStringExtra(DOB);
-                } else {
-                    message = "Pin: " + data.getStringExtra(PIN);
-                }
-                new AlertDialog.Builder(this)
-                        .setMessage(message)
-                        .setCancelable(false)
-                        .setNeutralButton("OK", null).show();
-            } else {
-                Toast.makeText(MainActivity.this, R.string.noResultFound, Toast.LENGTH_LONG).show();
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
+        intent.putExtra(RECEIPT_TYPE, receiptType);
+        intent.putExtra(JSON_DATA, jsonData);
+        intent.setComponent(new ComponentName(RECEIPT_SERVICE_PACKAGE_NAME, RECEIPT_SERVICE_CLASS_NAME));
+        startActivity(intent);
     }
 }
