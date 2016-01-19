@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String RECEIPT_SERVICE_CLASS_NAME = "co.celloscope.printingdemo.MainActivity";
     private static final String RECEIPT_SERVICE_PACKAGE_NAME = "co.celloscope.printingdemo";
-    private static final String RECEIPT_TYPE = "BarcodeType";
-    private static final String JSON_DATA = "BarcodeContent";
+    private static final String RECEIPT_TYPE = "ReceiptType";
+    private static final String JSON_DATA = "JsonData";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
