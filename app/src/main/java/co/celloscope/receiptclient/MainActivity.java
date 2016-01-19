@@ -23,9 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String DOB = "DOB";
     private static final String BARCODE_TYPE = "BarcodeType";
     private static final String BARCODE_CONTENT = "BarcodeContent";
-    private static final String QR = "QR";
     private static final String PDF417 = "PDF417";
-    private static final String ABC = "ABC";
     private static final String NID = "NID";
     private boolean isPDF417RequestSend = false;
 
