@@ -38,6 +38,8 @@ public class MockData {
                 return "{\"agentID\":\"AG000018\",\"givenNumberOfInstallment\":\"0\",\"overdueInstallment\":\"0\",\"penaltyAmount\":\"Tk. 0.00\"}";
             case 16:
                 return "{\"agentID\":\"AG000018\",\"customerID\":\"123456\",\"date\":\"Tue May 17, 2016 05:38:39 pm\",\"accountNumber\":\"012739100000053\",\"productType\":\"Savings\",\"accountName\":\"MD. AHSAN HABIB ROCKY\"}";
+            case 17:
+                return "{\"agentID\":\"AG000018\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"tranID\":\"15648613116464862314684\",\"pin\":\"56890809\",\"payableAmount\":\"Tk. 4600.00\",\"recipientName\":\"ANIS\",\"senderName\":\"ROCKY\",\"senderCountry\":\"USA\",\"currency\":\"USD\",\"exchangeRate\":\"Tk. 80.00 per USD\",\"fXAmount\":\"620.00\"}";
             default:
                 return "";
         }
