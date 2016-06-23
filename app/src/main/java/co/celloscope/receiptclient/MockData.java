@@ -7,7 +7,7 @@ public class MockData {
     public static String getMockJsonString(int receipt) {
         switch (receipt) {
             case 1:
-                return "{\"agentID\":\"AG000018\",\"customerID\":\"000000089\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"accountName\":\"ROCKY HABIB\",\"nationalID: \":\"1234567885555\",\"passportNo\":\"Not Submitted\",\"tINNo\":\"Not Submitted\",\"birthRegistrationNo\":\"Not Submitted\",\"productType\":\"Time\",\"productCode\":\"712\",\"productName\":\"FIXED DEPOSIT RECEIPT (12M)\",\"term\":\"12\",\"initialDeposit\":\"Tk 10000.00\"}";
+                return "{\"agentID\":\"AG000018\",\"customerID\":\"000000089\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"accountName\":\"ROCKY HABIB\",\"nationalID\":\"1234567885555\",\"passportNo\":\"Not Submitted\",\"tINNo\":\"Not Submitted\",\"birthRegistrationNo\":\"Not Submitted\",\"productType\":\"Time\",\"productCode\":\"712\",\"productName\":\"FIXED DEPOSIT\",\"term\":\"12\",\"initialDeposit\":\"Tk 10000.00\"}";
             case 2:
                 return "{\"agentID\":\"AG000018\",\"customerID\":\"000000089\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"accountName\":\"ROCKY HABIB\",\"nationalID: \":\"1234567885555\",\"passportNo\":\"Not Submitted\",\"tINNo\":\"Not Submitted\",\"birthRegistrationNo\":\"Not Submitted\",\"productType\":\"Time\",\"productCode\":\"712\",\"productName\":\"Money Maker Individual\",\"term\":\"60\",\"startDate\":\"Sat Aug 22, 2015\",\"endDate\":\"Sat Aug 22, 2016\",\"initialDeposit\":\"Tk 10000.00\"}";
             case 3:
@@ -15,7 +15,7 @@ public class MockData {
             case 4:
                 return "{\"agentID\":\"AG000018\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"tranID\":\"0822082813591258497865\",\"accountName\":\"TOFIQ AKBAR\",\"accountNumber\":\"018139100000812\",\"amount\":\"Tk 500.00\"}";
             case 5:
-                return "{\"agentID\":\"AG000018\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"accountName\":\"TOFIQ AKBAR\",\"tranID\":\"0822082813591258497865\",\"accountNumber\":\"018139100000812\",\"availableBalance\":\"Tk 500.00\",\"transactions\":[[\"Mon May 16, 2016 05:35:34 AM\",\"68778172120160516053534\",\"Cash Deposit\",\"(+200.00)\"],[\"Mon May 16, 2016 05:35:34 AM\",\"68778172120160516053534\",\"Cash Deposit\",\"(+200.00)\"]]}";
+                return "{\"agentID\":\"AG000018\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"accountName\":\"TOFIQ AKBAR\",\"accountNumber\":\"018139100000812\",\"availableBalance\":\"Tk 500.00\",\"transactions\":[[\"Mon May 16, 2016 05:35:34 AM\",\"68778172120160516053534\",\"Cash Deposit\",\"(+200.00)\"],[\"Mon May 16, 2016 05:35:34 AM\",\"68778172120160516053534\",\"Cash Deposit\",\"(+200.00)\"]]}";
             case 6:
                 return "{\"agentID\":\"AG000018\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"tranID\":\"0822082813591258497865\",\"accountName\":\"TOFIQ AKBAR\",\"accountNumber\":\"018139100000812\",\"depositorName\":\"RASHED\",\"amount\":\"Tk 500.00\"}";
             case 7:
@@ -23,7 +23,7 @@ public class MockData {
             case 8:
                 return "{\"agentID\":\"AG000018\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"tranID\":\"0822082813591258497865\",\"accountName\":\"TOFIQ AKBAR\",\"accountNumber\":\"018139100000812\",\"availableBalance\":\"Tk 500.00\"}";
             case 9:
-                return "{\"agentID\":\"AG000018\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"tranID\":\"0822082813591258497865\",\"accountName\":\"TOFIQ AKBAR\",\"accountNumber\":\"018139100000812\",\"amount\":\"Tk 500.00\"}";
+                return "{\"agentID\":\"AG000018\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"tranID\":\"0822082813591258497865\",\"accountName\":\"TOFIQ AKBAR\",\"accountNumber\":\"018139100000812\",\"receiverAccountName\":\"Ahsan Habib\",\"receiverAccountNumber\":\"018139100000258\",\"amount\":\"Tk 500.00\"}";
             case 10:
                 return "{\"agentID\":\"AG000018\",\"date\":\"Sat Aug 22, 2015 08:28:14 pm\",\"pin\":\"56890809\",\"amount\":\"Tk. 600.00\",\"recipientName\":\"ANIS\",\"senderCountry\":\"Saudi Arabia\",\"iDType\":\"NID\",\"idNumber\":\"1234567890809\"}";
             case 11:

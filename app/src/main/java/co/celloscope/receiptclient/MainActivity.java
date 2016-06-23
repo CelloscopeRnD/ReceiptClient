@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Integer code = Receipts.ACCOUNT_ACTIVATED.getReceiptCode();
+                Integer code = Receipts.FUND_TRANSFER.getReceiptCode();
                 startPrinting(code,
                         MockData.getMockJsonString(code),
                         CHINESE_PRINTER_ADDRESS);
